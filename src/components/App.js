@@ -34,9 +34,14 @@ function App() {
     setAllDownvotes(updatedDownvotes)
   }
 
+  const alignText = {
+    textAlign: "center",
+    alignItems: "center",
+  }
+
   return (
-    <>
-      <iframe
+    <div className="home" style={alignText}>
+      < iframe
         width="919"
         height="525"
         src="https://www.youtube.com/embed/dQw4w9WgXcQ"
@@ -47,7 +52,7 @@ function App() {
       <Header title={video.title} views={video.views} upvotes={allUpvotes} downvotes={allDownvotes} uploaded={video.createdAt} commentStatus={viewComments} viewCommentStatus={handleCommentsVIew} addVote={addingVote} minusVote={handleDownvote} />
       <hr />
       <Comments viewState={viewComments} comments={allComments} />
-    </>
+    </div >
   );
 }
 

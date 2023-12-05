@@ -12,6 +12,7 @@ export default function Comments({ comments, viewState }) {
                             < div className="comment" key={comment.id}>
                                 <h4>{comment.user}</h4>
                                 <p>{comment.comment}</p>
+
                             </div>
                         )
                     })}

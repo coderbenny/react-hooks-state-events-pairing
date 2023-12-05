@@ -20,14 +20,14 @@ export default function Header({ title, views, upvotes, downvotes, uploaded, com
     }
 
     return (
-        <>
+        <div>
             <h2>{title}</h2>
             <p><strong>Views:</strong> {views} | <strong>Uploaded:</strong> {uploaded} </p>
             <div className="votes">
-                <button type="button" onClick={handleUpVotes}>upvotes: {upvotes}</button> |
-                <button type="button" onClick={handleDownVotes}>downvotes:{downvotes}</button>
+                <button type="button" onClick={handleUpVotes}>👍 {upvotes}</button>
+                <button type="button" onClick={handleDownVotes}>👎{downvotes}</button>
             </div>
             <button type="button" onClick={handleHideClick}>{commentStatus ? "Hide Comments" : "Show Comments"}</button>
-        </>
+        </div>
     )
 }
