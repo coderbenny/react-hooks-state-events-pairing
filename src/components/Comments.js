@@ -1,21 +1,22 @@
-import React, { useState } from "react"
+import React from "react"
 
-export default function Comments({ comments }) {
-    const [allComments, setAllComments] = useState(comments)
+export default function Comments({ comments, viewState }) {
 
-    return (
-        <>
+    return viewState ? (
+        <div>
             <h2>Comments</h2>
-            <ul>
-                {allComments.map((comment) => {
-                    return (
-                        <>
-                            <h4>{comment.user}</h4>
-                            <p>{comment.comment}</p>
-                        </>
-                    )
-                })}
-            </ul>
-        </>
-    )
+            <div className="comments">
+                <ul >
+                    {comments.map((comment) => {
+                        return (
+                            < div className="comment" key={comment.id}>
+                                <h4>{comment.user}</h4>
+                                <p>{comment.comment}</p>
+                            </div>
+                        )
+                    })}
+                </ul>
+            </div >
+        </div>
+    ) : null;
 } 
