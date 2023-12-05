@@ -1,10 +1,12 @@
+import React from "react";
 import video from "../data/video.js";
+import Header from "./Header";
+import Comments from "./Comments";
 
 function App() {
-  console.log("Here's your data:", video);
 
   return (
-    <div className="App">
+    <>
       <iframe
         width="919"
         height="525"
@@ -13,7 +15,10 @@ function App() {
         allowFullScreen
         title="Thinking in React"
       />
-    </div>
+      <Header views={video.views} upvotes={video.upvotes} downvotes={video.downvotes} uploaded={video.createdAt} />
+      <hr />
+      <Comments comments={video.comments} />
+    </>
   );
 }
 
