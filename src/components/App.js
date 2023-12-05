@@ -24,6 +24,16 @@ function App() {
     setViewComments(newViewStatus)
   }
 
+  // function for handling Adding Votes
+  function addingVote(updatedUpvotes) {
+    setAllUpvotes(updatedUpvotes)
+  }
+
+  // function for handling Adding Downvotes
+  function handleDownvote(updatedDownvotes) {
+    setAllDownvotes(updatedDownvotes)
+  }
+
   return (
     <>
       <iframe
@@ -34,7 +44,7 @@ function App() {
         allowFullScreen
         title="Thinking in React"
       />
-      <Header title={video.title} views={video.views} upvotes={allUpvotes} downvotes={allDownvotes} uploaded={video.createdAt} commentStatus={viewComments} viewCommentStatus={handleCommentsVIew} />
+      <Header title={video.title} views={video.views} upvotes={allUpvotes} downvotes={allDownvotes} uploaded={video.createdAt} commentStatus={viewComments} viewCommentStatus={handleCommentsVIew} addVote={addingVote} minusVote={handleDownvote} />
       <hr />
       <Comments viewState={viewComments} comments={allComments} />
     </>
